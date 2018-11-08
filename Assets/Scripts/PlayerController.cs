@@ -5,9 +5,9 @@ using UnityEngine.Networking;
 
 public class PlayerController : NetworkBehaviour {
 
-	public float speed; //constant velocity of player IF moving
+	public float movSpeed; //constant velocity of player IF moving
 	[SyncVar] private float vert, hori;
-	[SyncVar] private Vector3 mov;
+	[SyncVar] private Vector2 mov;
 
 	[ClientRpc]
 	public void RpcColorPlayer(){
@@ -19,7 +19,7 @@ public class PlayerController : NetworkBehaviour {
 		if(!isLocalPlayer) return;
 		vert = Input.GetAxisRaw("Vertical");
 		hori = Input.GetAxisRaw("Horizontal");
-		mov = (new Vector3(hori,vert,0)).normalized*speed;
+		mov = (new Vector3(hori,vert,0)).normalized*movSpeed;
 	}
 
 	void FixedUpdate()
@@ -37,4 +37,5 @@ public class PlayerController : NetworkBehaviour {
 	void RpcMove(Vector3 mov){
 		GetComponent<Rigidbody2D>().velocity = mov;
 	}
+
 }

@@ -18,9 +18,10 @@ GameObject:
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4910977261910450}
+  - component: {fileID: 224530718500987922}
   - component: {fileID: 114038865183324204}
   - component: {fileID: 114543978280577054}
+  - component: {fileID: 222347377402994178}
   m_Layer: 0
   m_Name: NetworkManager
   m_TagString: Untagged
@@ -28,19 +29,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4910977261910450
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1274384995120606}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &114038865183324204
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -84,6 +72,7 @@ MonoBehaviour:
   m_OnlineScene: GameSceneA
   m_SpawnPrefabs:
   - {fileID: 1185181800212366, guid: f70d750a99fcca240ad36d8d4fe0ee04, type: 2}
+  - {fileID: 1844011819382084, guid: 6cc83251af0d2074293bf4509c958254, type: 2}
   m_CustomConfig: 0
   m_MaxConnections: 4
   m_ConnectionConfig:
@@ -139,3 +128,30 @@ MonoBehaviour:
   matchSize: 4
   isNetworkActive: 0
   matchMaker: {fileID: 0}
+  minPlayers: 2
+  maxPlayers: 4
+--- !u!222 &222347377402994178
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1274384995120606}
+  m_CullTransparentMesh: 0
+--- !u!224 &224530718500987922
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1274384995120606}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}

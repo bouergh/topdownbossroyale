@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b05f3c18b862c7042a241075495d0893, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  movSpeed: 15
 --- !u!114 &114336294269836994
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -153,7 +153,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25cba0c852aace04685af3d551ea6f2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletSpeed: 30
   crosshairPrefab: {fileID: 1185181800212366, guid: f70d750a99fcca240ad36d8d4fe0ee04,
+    type: 2}
+  bulletPrefab: {fileID: 1844011819382084, guid: 6cc83251af0d2074293bf4509c958254,
     type: 2}
 --- !u!114 &114921297128113644
 MonoBehaviour:

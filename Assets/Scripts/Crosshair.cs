@@ -7,9 +7,10 @@ public class Crosshair : NetworkBehaviour {
 	
 	[SyncVar]
 	private float zPos;
-	
+	[SyncVar]public float bulletSpeed;
 	public GameObject crosshairPrefab;
 	private GameObject crosshair;
+	public GameObject bulletPrefab;
 
 	// Use this for initialization
 	void Start () {
@@ -23,11 +24,41 @@ public class Crosshair : NetworkBehaviour {
 		crosshair = (GameObject)Instantiate(crosshairPrefab, transform.position, transform.rotation);
 		//NetworkServer.Spawn(crosshair);
 	}
+
 	
 	// Update is called once per frame
 	[Client]
 	void Update () {
 		if(!isLocalPlayer || crosshair == null) return;
 		crosshair.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, zPos - Camera.main.transform.position.z));
+	
+		if(Input.GetButtonDown("Fire1")){
+			//bulletSpawnPos = (Vector2)transform.position + Vector2.right;
+			Vector2 bulletSpawnPos = (crosshair.transform.position - transform.position).normalized + transform.position;
+			//Attention dependant du collider, p-e utiliser les Bounds du Collider
+			CmdFire(bulletSpawnPos);
+		}
 	}
+
+	
+	[Command]
+	public void CmdFire(Vector2 bulletSpawnPos){
+
+		Debug.Log("server spawning a bullet at position "+bulletSpawnPos);
+        // Create the Bullet from the Bullet Prefab
+        var bullet = (GameObject)Instantiate(
+            bulletPrefab,
+            bulletSpawnPos,
+            Quaternion.identity);
+
+        // Add velocity to the bullet
+        bullet.GetComponent<Rigidbody2D>().velocity = (bulletSpawnPos - (Vector2)transform.position) * bulletSpeed;
+		//Vector2.right * bulletSpeed;
+
+        // Spawn the bullet on the Clients
+        NetworkServer.Spawn(bullet);
+
+        // Destroy the bullet after 2 seconds
+        Destroy(bullet, 3.0f);
+    }	
 }
