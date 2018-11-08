@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114349323729983068}
   - component: {fileID: 50943832979400246}
   - component: {fileID: 114483020533139926}
+  - component: {fileID: 114254138461636900}
   m_Layer: 0
   m_Name: boulette
   m_TagString: Untagged
@@ -79,6 +80,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.0044927597}
   serializedVersion: 2
   m_Radius: 0.16018057
+--- !u!114 &114254138461636900
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1844011819382084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 238e2821cfcae964182fb6152280608a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114349323729983068
 MonoBehaviour:
   m_ObjectHideFlags: 1

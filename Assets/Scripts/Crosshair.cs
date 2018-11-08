@@ -11,10 +11,12 @@ public class Crosshair : NetworkBehaviour {
 	public GameObject crosshairPrefab;
 	private GameObject crosshair;
 	public GameObject bulletPrefab;
+	public float safeThresh = 0.2f;
 
 	// Use this for initialization
 	void Start () {
 		zPos = transform.position.z;
+		safeThresh = 1.2f * Mathf.Max(bulletPrefab.GetComponent<Collider2D>().bounds.size.x,bulletPrefab.GetComponent<Collider2D>().bounds.size.y);
 	}
 
     [ClientRpc]
@@ -34,7 +36,11 @@ public class Crosshair : NetworkBehaviour {
 	
 		if(Input.GetButtonDown("Fire1")){
 			//bulletSpawnPos = (Vector2)transform.position + Vector2.right;
-			Vector2 bulletSpawnPos = (crosshair.transform.position - transform.position).normalized + transform.position;
+			float safeDistance = Mathf.Sqrt(
+				GetComponent<Collider2D>().bounds.extents.x*GetComponent<Collider2D>().bounds.extents.x
+				+ GetComponent<Collider2D>().bounds.extents.y*GetComponent<Collider2D>().bounds.extents.y
+			)*1.3f + safeThresh;
+			Vector2 bulletSpawnPos = (crosshair.transform.position - transform.position).normalized*safeDistance + transform.position;
 			//Attention dependant du collider, p-e utiliser les Bounds du Collider
 			CmdFire(bulletSpawnPos);
 		}
