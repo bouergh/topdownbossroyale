@@ -21,10 +21,22 @@ public class Health : NetworkBehaviour {
 		currentHealth -= amount;
 		if (currentHealth <= 0)
 		{
-			currentHealth = 0;
 			Debug.Log("Dead!");
+			currentHealth = maxHealth;
+            // called on the Server, but invoked on the Clients
+            RpcRespawn();
 		}
 	}
+
+	[ClientRpc]
+    void RpcRespawn()
+    {
+        if (isLocalPlayer)
+        {
+			// Set the player’s position to a spawn point from Network Manager
+			transform.position = NetworkManager.singleton.GetStartPosition().position;;
+        }
+    }
 
 	void OnChangeHealth (int health)
 	{
