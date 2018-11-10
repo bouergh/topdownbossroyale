@@ -40,10 +40,10 @@ GameObject:
   - component: {fileID: 60912608726428448}
   - component: {fileID: 114336294269836994}
   - component: {fileID: 114921297128113644}
-  - component: {fileID: 114312834614225860}
   - component: {fileID: 114889959532987138}
   - component: {fileID: 50626474958569230}
   - component: {fileID: 114863930715060884}
+  - component: {fileID: 114663198498534946}
   m_Layer: 0
   m_Name: player1
   m_TagString: Player
@@ -195,18 +195,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114312834614225860
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1482054055646582}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b05f3c18b862c7042a241075495d0893, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movSpeed: 15
 --- !u!114 &114336294269836994
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -287,6 +275,18 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114663198498534946
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1482054055646582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77bc1aced10edbc439e4afe1870e0f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movSpeed: 15
 --- !u!114 &114863930715060884
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -299,6 +299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 224698899888377704}
+  destroyOnDeath: 0
   currentHealth: 100
 --- !u!114 &114889959532987138
 MonoBehaviour:
@@ -329,7 +330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TransformSyncMode: 1
-  m_SendInterval: 0.1
+  m_SendInterval: 0.033333335
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_SyncSpin: 0

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class PlayerController : NetworkBehaviour {
+public class PlayerMovement : NetworkBehaviour {
 
 	public float movSpeed; //constant velocity of player IF moving
 	[SyncVar] private float vert, hori;

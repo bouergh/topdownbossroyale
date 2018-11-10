@@ -619,9 +619,9 @@ PlayerSettings:
     UNet: 1
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: 
-  projectName: 
-  organizationId: 
+  cloudProjectId: 58b14e66-4c36-44dc-9f7a-b7f81c7f3ce5
+  projectName: TopdownBossRoyale
+  organizationId: fou-eb7706d2-cc31-4741-86e7-da5acdef7363
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

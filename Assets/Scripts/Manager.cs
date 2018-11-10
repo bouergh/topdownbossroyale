@@ -2,47 +2,40 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.Networking.Types;
 using UnityEngine.UI;
 
-public class Manager : NetworkManager {
+public class Manager : NetworkBehaviour {
 
 
 	public int minPlayers = 2;
-	public int maxPlayers = 4;
-	private bool gameStarted = false, gameSetup = false;
+	public int maxPlayers = 2;
+	private bool gameSetup = false;
 	
 	void Start () {
-		matchSize = (uint)maxPlayers;
+		gameSetup = false;
 	}
 	
 	//Update is called once per frame
 	void Update () {
-		if(NetworkManager.singleton.numPlayers>=minPlayers && NetworkManager.singleton.numPlayers<maxPlayers){
-			if(!gameStarted) {
-				gameStarted = true;
-				Debug.Log("game started");
-			}
-		}else{
-			if(gameStarted){
-			gameStarted = false;
-			gameSetup = false;
-			Debug.Log("game stopped");
-			}				
-		}
 
-		if(gameStarted && !gameSetup){
-			Debug.Log("spawning the crosshairs for each player");
-			GameSetup();
+		if(!gameSetup){
+			if(GameObject.FindGameObjectsWithTag("Player").Length>=minPlayers){
+				StartCoroutine(GameSetup());
+				gameSetup = true;
+			}
 		}
 	}
 
-	void GameSetup(){
 	
+
+	IEnumerator GameSetup(){
+		yield return new WaitForSeconds(0.1f);
 		foreach(GameObject player in GameObject.FindGameObjectsWithTag("Player")){
 			player.GetComponent<Crosshair>().RpcSpawnCrosshair();
-			player.GetComponent<PlayerController>().RpcColorPlayer();
+			player.GetComponent<PlayerMovement>().RpcColorPlayer();
 		}
-		gameSetup = true;
+		
 	}
 	
 }
