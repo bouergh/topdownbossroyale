@@ -58,6 +58,7 @@ namespace Prototype.NetworkLobby
         void Start()
         {
             gamePlayerPrefab = gamePlayerPrefabTest; //can't do it manually it seems
+            ChangeRegion("US"); //fixes cross-region play ?
 
             s_Singleton = this;
             _lobbyHooks = GetComponent<Prototype.NetworkLobby.LobbyHook>();
@@ -70,6 +71,24 @@ namespace Prototype.NetworkLobby
 
             SetServerInfo("Offline", "None");
         }
+
+        public void ChangeRegion(string Region){
+             switch (Region) {
+ 
+             case "US":
+                 SetMatchHost("us1-mm.unet.unity3d.com", matchPort, true);
+             return;
+ 
+             case "EU":
+                 SetMatchHost("eu1-mm.unet.unity3d.com", matchPort, true);
+             return;
+ 
+             case "AP":
+                 SetMatchHost("ap1-mm.unet.unity3d.com", matchPort, true);
+             return;
+ 
+             }
+         }
 
         public override void OnLobbyClientSceneChanged(NetworkConnection conn)
         {
