@@ -14,6 +14,10 @@ public class PlayerMovement : NetworkBehaviour {
 		if(isLocalPlayer) GetComponent<SpriteRenderer>().color = Color.red;
 		//if not Color is blue for all enemies (default color of sprite, don't need code)
 	}
+	[ClientRpc]
+	public void RpcSetCamera(){
+		if(isLocalPlayer) FindObjectOfType<CameraFollow>().playerToFollow = transform;
+	}
 
 	void Update(){
 		if(!isLocalPlayer) return;

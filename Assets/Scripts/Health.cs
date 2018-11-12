@@ -24,11 +24,11 @@ public class Health : NetworkBehaviour {
 		{
 			Debug.Log("Dead!");
 			if (destroyOnDeath)
-			{
-				Destroy(gameObject);
+			{//for the boss
+				CmdDestroy(gameObject);
 			} 
 			else
-			{  
+			{//players
 				currentHealth = maxHealth;
 				// called on the Server, but invoked on the Clients
 				RpcRespawn(); 
@@ -42,9 +42,17 @@ public class Health : NetworkBehaviour {
         if (isLocalPlayer)
         {
 			// Set the player’s position to a spawn point from Network Manager
-			transform.position = NetworkManager.singleton.GetStartPosition().position;;
+			//transform.position = NetworkManager.singleton.GetStartPosition().position;;
+			Debug.Log("player "+netId+" is dead !");
+			CmdDestroy(gameObject);
         }
     }
+
+	[Command]
+	void CmdDestroy(GameObject go){
+		NetworkServer.Destroy(gameObject);
+		Manager.instance.CheckWinConditions();
+	}
 
 	void OnChangeHealth (int health)
 	{

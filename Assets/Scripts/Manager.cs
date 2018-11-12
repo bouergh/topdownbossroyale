@@ -11,7 +11,22 @@ public class Manager : NetworkBehaviour {
 	public int minPlayers = 2;
 	public int maxPlayers = 2;
 	private bool gameSetup = false;
+	public static Manager instance;
+	public Text winText;
 	
+	private void Awake()
+     {
+        // if the singleton hasn't been initialized yet
+        if (instance != null && instance != this)
+        {
+           Destroy(this.gameObject);
+           return;//Avoid doing anything else
+        }
+     
+        instance = this;
+        DontDestroyOnLoad( this.gameObject );
+     }
+
 	void Start () {
 		gameSetup = false;
 	}
@@ -34,8 +49,23 @@ public class Manager : NetworkBehaviour {
 		foreach(GameObject player in GameObject.FindGameObjectsWithTag("Player")){
 			player.GetComponent<Crosshair>().RpcSpawnCrosshair();
 			player.GetComponent<PlayerMovement>().RpcColorPlayer();
+			player.GetComponent<PlayerMovement>().RpcSetCamera();
 		}
 		
+	}
+
+	public void CheckWinConditions(){
+		Debug.Log("checking win conditions");
+		if(GameObject.FindGameObjectsWithTag("Player").Length == 1 || GameObject.FindGameObjectsWithTag("Boss").Length == 0){
+			StartCoroutine(Endgame());
+		}
+	}
+
+	IEnumerator Endgame(){
+		Debug.Log("game has ended !");
+		winText.GetComponent<NetworkText>().textToShow = "Player X wins !";
+		yield return new WaitForSeconds(4f);
+		Application.Quit();
 	}
 	
 }
