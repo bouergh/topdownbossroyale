@@ -12,7 +12,7 @@ public class Manager : NetworkBehaviour {
 	public int maxPlayers = 2;
 	private bool gameSetup = false;
 	public static Manager instance;
-	public Text winText;
+	public GameObject winText;
 	
 	private void Awake()
      {
@@ -63,9 +63,11 @@ public class Manager : NetworkBehaviour {
 
 	IEnumerator Endgame(){
 		Debug.Log("game has ended !");
+		if(!winText) winText = FindObjectOfType<NetworkText>().gameObject; //attention s'il y en a plusieurs !!!
 		winText.GetComponent<NetworkText>().textToShow = "Player X wins !";
 		yield return new WaitForSeconds(4f);
-		Application.Quit();
+		NetworkManager.singleton.ServerChangeScene("LobbyScene");
+		gameSetup = false;
 	}
 	
 }

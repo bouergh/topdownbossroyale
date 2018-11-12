@@ -107,10 +107,10 @@ MonoBehaviour:
     y: 30
     width: 1536
     height: 731
-  m_MinSize: {x: 538, y: 271}
+  m_MinSize: {x: 713, y: 271}
   m_MaxSize: {x: 18008, y: 10021}
   vertical: 0
-  controlID: 52
+  controlID: 15
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -186,15 +186,15 @@ MonoBehaviour:
     y: 0
     width: 308
     height: 731
-  m_MinSize: {x: 102, y: 121}
+  m_MinSize: {x: 277, y: 71}
   m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 19}
+  m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
   - {fileID: 19}
   - {fileID: 20}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -331,9 +331,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 5a67fcff
-    m_LastClickedID: -235686
-    m_ExpandedIDs: ce5bfcff645cfcffc25dfcffca5dfcffee60fcff6867fcff1c6bfcff0c86fcff7a89fcff2aa5fcffdca5fcff36a7fcff3aa7fcff50cbfcff12ccfcff6ccdfcff70cdfcffd6f8fcff8cf9fcffe6fafcffeafafcff6415fdfffa15fdff6017fdff6e17fdff543dfdffa03dfdfffc3efdff003ffdff0058fdffaa5cfdff405dfdff9e5efdffa65efdff3c65fdffea6ffdff707bfdff067cfdff647dfdff6c7dfdff9880fdff8891fdffbc92fdff0aa9fdff9ea9fdfffcaafdff04abfdff9abafdff64befdfff8befdff2ec0fdff8ec2fdff5e57feff565bfeff0067feff9467feffec68fefff068feff527afeffe67afeff3e7cfeff427cfeff2c8bfeffbe8bfeff1a8dfeff228dfeffa693feffb494feffeca6feff7ebefeff10bffeff66c0feff6ec0feff78ebfeff06ecfeff5cedfeff64edfeff2c2cffffb82cffff0c2effff142effff8431ffffd032ffffe4fbfffff4ffffff00000000d82d00004c860000289e00006e9e00000af5000050f50000
+    m_SelectedIDs: 78caffff
+    m_LastClickedID: -13704
+    m_ExpandedIDs: b0afffff3eb0ffff9ab1ffff9eb1ffff9acaffff48d1fffffad1ffff54d3ffff58d3ffff9ce6ffff28e7ffff86e8ffff8ee8ffffe4fbfffff4ffffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -394,7 +394,7 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Sprites/spritesheet Robot-Fish
   m_ViewMode: 0
   m_StartGridSize: 64
   m_LastFolders:
@@ -407,7 +407,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: b4340000
     m_LastClickedID: 13492
-    m_ExpandedIDs: 00000000042a0000282a0000382a00007e2a0000822a0000bc2a0000e42a0000142b0000242b00003a2b00003c2b00006c2b0000a02b0000a42b0000dc2c0000ee2c0000622d00006a2d00006c2d0000ae2e0000
+    m_ExpandedIDs: 00000000062a00002a2a00003a2a0000802a0000842a0000be2a0000e62a0000162b0000262b00003c2b00003e2b0000662b00006e2b0000a22b0000a62b0000142c0000e02c0000f22c0000662d00006e2d0000702d00007e310000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -432,21 +432,21 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 0}
+    scrollPos: {x: 0, y: 352}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff00000000042a0000282a0000382a00007e2a0000822a0000bc2a0000e42a0000142b0000242b00003a2b00003c2b0000642b00006c2b0000a02b0000a42b0000122c0000dc2c0000ee2c0000622d00006a2d00006c2d0000ae2e0000
+    m_ExpandedIDs: ffffffff00000000062a00002a2a00003a2a0000622a0000802a0000842a0000be2a0000e62a0000162b0000262b00003c2b00003e2b0000662b00006e2b0000a22b0000a62b0000142c0000e02c0000f22c0000662d00006e2d0000702d00007e310000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: GameSceneA
-      m_OriginalName: GameSceneA
+      m_Name: Manager
+      m_OriginalName: Manager
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 11074
+      m_UserData: 10476
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0
