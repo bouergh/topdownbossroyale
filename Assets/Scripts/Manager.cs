@@ -8,8 +8,8 @@ using UnityEngine.UI;
 public class Manager : NetworkBehaviour {
 
 
-	public int minPlayers = 2;
-	public int maxPlayers = 2;
+	public int minPlayers = 1;
+	public int maxPlayers = 8;
 	private bool gameSetup = false;
 	public static Manager instance;
 	public GameObject winText;
