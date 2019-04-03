@@ -1,2 +1,3 @@
 all_builds_on_windows:
-        - ./builds.ps1
+  script:
+    - ./builds.ps1
