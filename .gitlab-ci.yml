@@ -1,5 +1,0 @@
-ps_helloworld:
-        script:
-                - .\HelloWorld.ps1 | Out-File c:\windows\temp\helloworld.txt
-        tags:
-                - windows
