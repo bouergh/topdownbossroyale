@@ -1,3 +1,4 @@
 all_builds_on_windows:
   script:
-    - ./builds.ps1
+    - powershell -File build.ps1
+
