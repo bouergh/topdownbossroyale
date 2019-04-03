@@ -1,4 +1,5 @@
-all_builds_on_windows:
-  script:
-    - powershell -File build.ps1
-
+ps_helloworld:
+        script:
+                - .\HelloWorld.ps1 | Out-File c:\windows\temp\helloworld.txt
+        tags:
+                - windows
