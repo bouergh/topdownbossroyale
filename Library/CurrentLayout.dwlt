@@ -75,7 +75,7 @@ MonoBehaviour:
   m_MinSize: {x: 232, y: 494}
   m_MaxSize: {x: 10002, y: 14044}
   vertical: 1
-  controlID: 22
+  controlID: 156
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -121,7 +121,7 @@ MonoBehaviour:
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
-  m_LastLoadedLayoutName: Arthur_BigScreen
+  m_LastLoadedLayoutName: 
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -165,10 +165,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 1111, y: 494}
-  m_MaxSize: {x: 18006, y: 14044}
+  m_MinSize: {x: 613, y: 494}
+  m_MaxSize: {x: 18008, y: 14044}
   vertical: 0
-  controlID: 101
+  controlID: 36
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -216,9 +216,9 @@ MonoBehaviour:
     y: 0
     width: 1159
     height: 947
-  m_MinSize: {x: 604, y: 322}
+  m_MinSize: {x: 104, y: 122}
   m_MaxSize: {x: 4004, y: 4022}
-  m_ActualView: {fileID: 11}
+  m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 18}
   - {fileID: 14}
@@ -226,8 +226,8 @@ MonoBehaviour:
   - {fileID: 20}
   - {fileID: 22}
   - {fileID: 11}
-  m_Selected: 5
-  m_LastSelected: 0
+  m_Selected: 1
+  m_LastSelected: 5
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -247,8 +247,8 @@ MonoBehaviour:
     y: 0
     width: 384
     height: 947
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 277, y: 72}
+  m_MaxSize: {x: 4002, y: 4022}
   m_ActualView: {fileID: 23}
   m_Panes:
   - {fileID: 23}
@@ -305,9 +305,9 @@ MonoBehaviour:
     m_SearchString: 
   m_ActionsTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 8fc5a834
-    m_LastClickedID: 883475855
-    m_ExpandedIDs: 6c818884707bb7a0fe253c22
+    m_SelectedIDs: 60badb60
+    m_LastClickedID: 1625012832
+    m_ExpandedIDs: 6c818884707bb7a0ca2177fcfe253c22313eab4f60badb60
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -329,10 +329,13 @@ MonoBehaviour:
     m_AdvancedDropdownState:
       states:
       - itemId: 371857150
-        selectedIndex: -1
+        selectedIndex: 0
         scroll: {x: 0, y: 0}
       - itemId: 656259478
-        selectedIndex: 7
+        selectedIndex: 1
+        scroll: {x: 0, y: 0}
+      - itemId: 378383742
+        selectedIndex: -1
         scroll: {x: 0, y: 0}
     m_ManualPathEditMode: 0
   m_ActionAssetManager:
@@ -346,15 +349,80 @@ MonoBehaviour:
       \           \"actions\": [\n                {\n                    \"name\":
       \"Shoot\",\n                    \"id\": \"1e74c75c-47fc-4699-8242-dd8b7fcabea9\",\n
       \                   \"expectedControlLayout\": \"\",\n                    \"continuous\":
-      false,\n                    \"passThrough\": false,\n                    \"processors\":
-      \"\",\n                    \"interactions\": \"\",\n                    \"bindings\":
-      []\n                }\n            ],\n            \"bindings\": [\n                {\n
-      \                   \"name\": \"\",\n                    \"id\": \"46b98127-5d11-4492-886c-2fde1980033a\",\n
+      true,\n                    \"passThrough\": false,\n                    \"processors\":
+      \"\",\n                    \"interactions\": \"Press\",\n                    \"bindings\":
+      []\n                },\n                {\n                    \"name\": \"Move\",\n
+      \                   \"id\": \"4342f95e-2b99-4383-8396-08c41e64f8bd\",\n                    \"expectedControlLayout\":
+      \"\",\n                    \"continuous\": true,\n                    \"passThrough\":
+      false,\n                    \"processors\": \"\",\n                    \"interactions\":
+      \"Press(behavior=2)\",\n                    \"bindings\": []\n                }\n
+      \           ],\n            \"bindings\": [\n                {\n                    \"name\":
+      \"\",\n                    \"id\": \"46b98127-5d11-4492-886c-2fde1980033a\",\n
       \                   \"path\": \"<Mouse>/leftButton\",\n                    \"interactions\":
-      \"Press\",\n                    \"processors\": \"\",\n                    \"groups\":
+      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
       \";KBM\",\n                    \"action\": \"Shoot\",\n                    \"chainWithPrevious\":
       false,\n                    \"isComposite\": false,\n                    \"isPartOfComposite\":
-      false,\n                    \"modifiers\": \"\"\n                }\n            ]\n
+      false,\n                    \"modifiers\": \"\"\n                },\n                {\n
+      \                   \"name\": \"2D Vector\",\n                    \"id\": \"b87778c3-bedc-46cb-ae00-494200f20139\",\n
+      \                   \"path\": \"2DVector\",\n                    \"interactions\":
+      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
+      \"\",\n                    \"action\": \"Move\",\n                    \"chainWithPrevious\":
+      false,\n                    \"isComposite\": true,\n                    \"isPartOfComposite\":
+      false,\n                    \"modifiers\": \"\"\n                },\n                {\n
+      \                   \"name\": \"up\",\n                    \"id\": \"b087d17f-d7e8-4119-9b4d-aab36d0cc6fb\",\n
+      \                   \"path\": \"<Keyboard>/w\",\n                    \"interactions\":
+      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
+      \"KBM\",\n                    \"action\": \"Move\",\n                    \"chainWithPrevious\":
+      false,\n                    \"isComposite\": false,\n                    \"isPartOfComposite\":
+      true,\n                    \"modifiers\": \"\"\n                },\n                {\n
+      \                   \"name\": \"down\",\n                    \"id\": \"c9b7a249-ab1d-4005-a8fe-981aa1d6ed57\",\n
+      \                   \"path\": \"<Keyboard>/s\",\n                    \"interactions\":
+      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
+      \"KBM\",\n                    \"action\": \"Move\",\n                    \"chainWithPrevious\":
+      false,\n                    \"isComposite\": false,\n                    \"isPartOfComposite\":
+      true,\n                    \"modifiers\": \"\"\n                },\n                {\n
+      \                   \"name\": \"left\",\n                    \"id\": \"39482d10-52a9-4bc8-ab93-4e6b4dfca7cb\",\n
+      \                   \"path\": \"<Keyboard>/a\",\n                    \"interactions\":
+      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
+      \"KBM\",\n                    \"action\": \"Move\",\n                    \"chainWithPrevious\":
+      false,\n                    \"isComposite\": false,\n                    \"isPartOfComposite\":
+      true,\n                    \"modifiers\": \"\"\n                },\n                {\n
+      \                   \"name\": \"right\",\n                    \"id\": \"c15ea0df-b9aa-438f-86ea-f2945d5028d0\",\n
+      \                   \"path\": \"<Keyboard>/d\",\n                    \"interactions\":
+      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
+      \"KBM\",\n                    \"action\": \"Move\",\n                    \"chainWithPrevious\":
+      false,\n                    \"isComposite\": false,\n                    \"isPartOfComposite\":
+      true,\n                    \"modifiers\": \"\"\n                },\n                {\n
+      \                   \"name\": \"2D Vector\",\n                    \"id\": \"33e66326-0291-42cb-95a3-cd47be8a9f27\",\n
+      \                   \"path\": \"2DVector\",\n                    \"interactions\":
+      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
+      \"\",\n                    \"action\": \"Move\",\n                    \"chainWithPrevious\":
+      false,\n                    \"isComposite\": true,\n                    \"isPartOfComposite\":
+      false,\n                    \"modifiers\": \"\"\n                },\n                {\n
+      \                   \"name\": \"up\",\n                    \"id\": \"11c3f12d-e7fc-4c2b-ba49-082311321699\",\n
+      \                   \"path\": \"<Keyboard>/upArrow\",\n                    \"interactions\":
+      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
+      \"KBM\",\n                    \"action\": \"Move\",\n                    \"chainWithPrevious\":
+      false,\n                    \"isComposite\": false,\n                    \"isPartOfComposite\":
+      true,\n                    \"modifiers\": \"\"\n                },\n                {\n
+      \                   \"name\": \"down\",\n                    \"id\": \"9dd59c53-5889-4497-9667-05da7ae7c42f\",\n
+      \                   \"path\": \"<Keyboard>/downArrow\",\n                    \"interactions\":
+      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
+      \"KBM\",\n                    \"action\": \"Move\",\n                    \"chainWithPrevious\":
+      false,\n                    \"isComposite\": false,\n                    \"isPartOfComposite\":
+      true,\n                    \"modifiers\": \"\"\n                },\n                {\n
+      \                   \"name\": \"left\",\n                    \"id\": \"5f6effad-f0a3-418b-b306-83bb24ee4e07\",\n
+      \                   \"path\": \"<Keyboard>/leftArrow\",\n                    \"interactions\":
+      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
+      \"KBM\",\n                    \"action\": \"Move\",\n                    \"chainWithPrevious\":
+      false,\n                    \"isComposite\": false,\n                    \"isPartOfComposite\":
+      true,\n                    \"modifiers\": \"\"\n                },\n                {\n
+      \                   \"name\": \"right\",\n                    \"id\": \"bfac7d4e-138b-40f9-b997-46f27a4144fc\",\n
+      \                   \"path\": \"<Keyboard>/rightArrow\",\n                    \"interactions\":
+      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
+      \"KBM\",\n                    \"action\": \"Move\",\n                    \"chainWithPrevious\":
+      false,\n                    \"isComposite\": false,\n                    \"isPartOfComposite\":
+      true,\n                    \"modifiers\": \"\"\n                }\n            ]\n
       \       }\n    ],\n    \"controlSchemes\": [\n        {\n            \"name\":
       \"KBM\",\n            \"basedOn\": \"\",\n            \"bindingGroup\": \"KBM\",\n
       \           \"devices\": [\n                {\n                    \"devicePath\":
@@ -551,7 +619,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -642,23 +710,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 12360000
+      m_SelectedIDs: d02e0000
       m_LastClickedID: 0
       m_ExpandedIDs: 8afbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Player
-        m_OriginalName: Player
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -1144
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 8}
       m_SearchString: 
@@ -706,7 +774,7 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/ZZZ_OldStuff/Scripts
   m_ViewMode: 0
   m_StartGridSize: 64
   m_LastFolders:
@@ -719,7 +787,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: b4340000
     m_LastClickedID: 13492
-    m_ExpandedIDs: 00000000d02f00001830000074300000a2300000b8300000be30000050310000c83100007032000082320000d0320000d2320000be3300004e3400006c3500001c3600002e360000303600003e360000c0370000
+    m_ExpandedIDs: 00000000d42f00001c300000783000008e300000bc300000c230000054310000cc3100007432000086320000d4320000d6320000c233000054340000743500001a36000026360000383600003a36000048360000d8370000da370000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -744,24 +812,24 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 0}
+    scrollPos: {x: 0, y: 320}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff00000000d02f000018300000743000008a300000b8300000be30000050310000c83100007032000082320000d0320000d2320000be3300004e3400006c350000123600001c3600002e360000303600003e360000c037000066380000
+    m_ExpandedIDs: ffffffff00000000d42f00001c300000783000008e300000bc300000c23000003e310000543100008e310000a0310000cc3100007432000086320000d4320000d6320000c23300005434000052350000743500001a360000263600003a36000048360000d8370000da37000036380000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: InputMaster
-      m_OriginalName: InputMaster
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 13842
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 2}
     m_SearchString: 
@@ -928,7 +996,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -1144
+  m_LastSelectedObjectID: 14156
 --- !u!114 &20
 MonoBehaviour:
   m_ObjectHideFlags: 52

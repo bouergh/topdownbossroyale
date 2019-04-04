@@ -35,6 +35,13 @@ public class InputMaster : InputActionAssetReference
             m_Player_Move.performed += m_PlayerMoveActionPerformed.Invoke;
         if (m_PlayerMoveActionCancelled != null)
             m_Player_Move.cancelled += m_PlayerMoveActionCancelled.Invoke;
+        m_Player_Aim = m_Player.GetAction("Aim");
+        if (m_PlayerAimActionStarted != null)
+            m_Player_Aim.started += m_PlayerAimActionStarted.Invoke;
+        if (m_PlayerAimActionPerformed != null)
+            m_Player_Aim.performed += m_PlayerAimActionPerformed.Invoke;
+        if (m_PlayerAimActionCancelled != null)
+            m_Player_Aim.cancelled += m_PlayerAimActionCancelled.Invoke;
         m_Initialized = true;
     }
     private void Uninitialize()
@@ -58,6 +65,13 @@ public class InputMaster : InputActionAssetReference
             m_Player_Move.performed -= m_PlayerMoveActionPerformed.Invoke;
         if (m_PlayerMoveActionCancelled != null)
             m_Player_Move.cancelled -= m_PlayerMoveActionCancelled.Invoke;
+        m_Player_Aim = null;
+        if (m_PlayerAimActionStarted != null)
+            m_Player_Aim.started -= m_PlayerAimActionStarted.Invoke;
+        if (m_PlayerAimActionPerformed != null)
+            m_Player_Aim.performed -= m_PlayerAimActionPerformed.Invoke;
+        if (m_PlayerAimActionCancelled != null)
+            m_Player_Aim.cancelled -= m_PlayerAimActionCancelled.Invoke;
         m_Initialized = false;
     }
     public void SetAsset(InputActionAsset newAsset)
@@ -83,6 +97,10 @@ public class InputMaster : InputActionAssetReference
     [SerializeField] private ActionEvent m_PlayerMoveActionStarted;
     [SerializeField] private ActionEvent m_PlayerMoveActionPerformed;
     [SerializeField] private ActionEvent m_PlayerMoveActionCancelled;
+    private InputAction m_Player_Aim;
+    [SerializeField] private ActionEvent m_PlayerAimActionStarted;
+    [SerializeField] private ActionEvent m_PlayerAimActionPerformed;
+    [SerializeField] private ActionEvent m_PlayerAimActionCancelled;
     public struct PlayerActions
     {
         private InputMaster m_Wrapper;
@@ -95,6 +113,10 @@ public class InputMaster : InputActionAssetReference
         public ActionEvent MoveStarted { get { return m_Wrapper.m_PlayerMoveActionStarted; } }
         public ActionEvent MovePerformed { get { return m_Wrapper.m_PlayerMoveActionPerformed; } }
         public ActionEvent MoveCancelled { get { return m_Wrapper.m_PlayerMoveActionCancelled; } }
+        public InputAction @Aim { get { return m_Wrapper.m_Player_Aim; } }
+        public ActionEvent AimStarted { get { return m_Wrapper.m_PlayerAimActionStarted; } }
+        public ActionEvent AimPerformed { get { return m_Wrapper.m_PlayerAimActionPerformed; } }
+        public ActionEvent AimCancelled { get { return m_Wrapper.m_PlayerAimActionCancelled; } }
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -111,6 +133,9 @@ public class InputMaster : InputActionAssetReference
                 Move.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
                 Move.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
                 Move.cancelled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
+                Aim.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAim;
+                Aim.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAim;
+                Aim.cancelled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAim;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -121,6 +146,9 @@ public class InputMaster : InputActionAssetReference
                 Move.started += instance.OnMove;
                 Move.performed += instance.OnMove;
                 Move.cancelled += instance.OnMove;
+                Aim.started += instance.OnAim;
+                Aim.performed += instance.OnAim;
+                Aim.cancelled += instance.OnAim;
             }
         }
     }
@@ -151,4 +179,5 @@ public interface IPlayerActions
 {
     void OnShoot(InputAction.CallbackContext context);
     void OnMove(InputAction.CallbackContext context);
+    void OnAim(InputAction.CallbackContext context);
 }

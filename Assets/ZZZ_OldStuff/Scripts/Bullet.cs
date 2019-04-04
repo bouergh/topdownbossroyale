@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class Bullet : MonoBehaviour {
+	public float speed = 20f;
     
     void OnCollisionEnter2D(Collision2D collision)
     {

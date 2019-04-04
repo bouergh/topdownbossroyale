@@ -24,6 +24,16 @@
                     "processors": "",
                     "interactions": "Press(behavior=2)",
                     "bindings": []
+                },
+                {
+                    "name": "Aim",
+                    "id": "2d64cdee-027d-4369-b558-15227055307c",
+                    "expectedControlLayout": "Vector2",
+                    "continuous": true,
+                    "passThrough": false,
+                    "processors": "",
+                    "interactions": "Press(behavior=2)",
+                    "bindings": []
                 }
             ],
             "bindings": [
@@ -168,6 +178,19 @@
                     "chainWithPrevious": false,
                     "isComposite": false,
                     "isPartOfComposite": true,
+                    "modifiers": ""
+                },
+                {
+                    "name": "",
+                    "id": "28fee418-fe10-46a0-899c-94985b34e990",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KBM",
+                    "action": "Aim",
+                    "chainWithPrevious": false,
+                    "isComposite": false,
+                    "isPartOfComposite": false,
                     "modifiers": ""
                 }
             ]
