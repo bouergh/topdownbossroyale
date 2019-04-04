@@ -87,6 +87,8 @@ GameObject:
   - component: {fileID: 50626474958569230}
   - component: {fileID: 61868021481307878}
   - component: {fileID: 95589062140975362}
+  - component: {fileID: 307136159}
+  - component: {fileID: 307136160}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -223,6 +225,48 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &307136159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482054055646582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf10cdea1344482e91a4f2b58506b77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &307136160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482054055646582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37c498840c877214bb13ea7b74857d1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controls:
+    m_Asset: {fileID: -944628639613478452, guid: 2aa2c0de0cad69546ac71c14af8fbe97,
+      type: 3}
+    m_PlayerShootActionStarted:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: InputMaster+ActionEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+    m_PlayerShootActionPerformed:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: InputMaster+ActionEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+    m_PlayerShootActionCancelled:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: InputMaster+ActionEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
 --- !u!1 &1500863310972318
 GameObject:
   m_ObjectHideFlags: 0
